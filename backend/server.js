@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 app.use("/api/tasks", taskRoutes);
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGO_URI, { serverSelectionTimeoutMS: 5000 })
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
