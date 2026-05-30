@@ -37,7 +37,7 @@ function App() {
     }
   };
 
-  const updateTask = async (id, updatedTask) => {
+  const updateTask = async (id, updatedData) => {
     try {
       const response = await fetch(`${API_URL}/${id}`, {
         method: "PUT",
@@ -108,7 +108,7 @@ function App() {
         tasks={filteredTasks}
         deleteTask={deleteTask}
         toggleComplete={toggleComplete}
-        editTask={editTask}
+        editTask={updateTask}
       />
     </div>
   );
