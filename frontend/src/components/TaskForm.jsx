@@ -7,7 +7,7 @@ function TaskForm({ addTask }) {
     e.preventDefault();
     console.log('Form submitted! Title:', title);
 
-    if (title.trim() !== '') {
+    if (title.trim() === '') {
       return;
     }
     addTask({ title });

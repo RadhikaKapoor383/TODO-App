@@ -24,20 +24,16 @@ function App() {
   };
 
   const addTask = async (task) => {
-    console.log('addTask called with:', task); // ← add this
     try {
-      console.log('Sending to backend...'); // ← and this
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title: task.title }),
+        body: JSON.stringify({ title: task.title }), // ← task.title not just task
       });
-      console.log('Response status:', response.status); // ← and this
       const newTask = await response.json();
-      console.log('New task from backend:', newTask); // ← and this
       setTasks([...tasks, newTask]);
     } catch (error) {
-      console.error('Error adding task:', error); // ← already there
+      console.error('Error adding task:', error);
     }
   };
 
