@@ -5,7 +5,8 @@ function TaskForm({ addTask }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+    console.log('Form submitted! Title:', title);
+
     if (title.trim() !== '') {
       return;
     }
@@ -18,10 +19,13 @@ function TaskForm({ addTask }) {
       <input
         type="text"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={(e) => {
+          console.log('Typing:', e.target.value); // ← add this
+          setTitle(e.target.value);
+        }}
         placeholder="Add a new task..."
       />
-      <button type="submit">Add Task</button>
+      <button type="submit">Add</button>
     </form>
   );
 }
