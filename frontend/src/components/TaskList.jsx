@@ -1,5 +1,21 @@
 function TaskList({ tasks }) {
-  return <div>TaskList coming soon...</div>;
+  if (tasks.length === 0) {
+    return <p className="no-tasks">No tasks here!</p>;
+  }
+
+  return (
+    <ul className="task-list">
+      {tasks.map((task) => (
+        <TaskItem
+          key={task._id}
+          task={task}
+          deleteTask={deleteTask}
+          toggleComplete={toggleComplete}
+          editTask={editTask}
+        />
+      ))}
+    </ul>
+  );
 }
 
 export default TaskList;
