@@ -4,12 +4,12 @@ Simple full-stack to-do application built with React on the frontend and Express
 
 ## Features
 
-- Add new tasks
-- View all tasks
-- Filter tasks by all, pending, and completed
-- Mark tasks as completed or pending
-- Edit existing task titles
-- Delete tasks
+- Add new tasks.
+- View all tasks.
+- Filter tasks by all, pending, and completed.
+- Mark tasks as completed or pending.
+- Edit existing task titles.
+- Delete tasks.
 
 ## Project Structure
 
